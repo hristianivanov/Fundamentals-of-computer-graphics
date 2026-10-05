@@ -205,14 +205,12 @@ VOID Example_SaveFile(HDC hdc)
 }
 VOID Example_BMPbuffer(HDC hdc, int ak, int xend, int yend)
 {
-
 	Graphics graphics(hdc);  // инициализация на графичен режим 
 	Bitmap bmp(xend, yend, &graphics); //създаване на обект - буфер
 	Graphics imgr(&bmp); // създаване на обект от буфера
 	imgr.Clear(Color(255, 255, 255)); //задаване на базов цвят бял екран
 
 	// изчертаване на елипса в буфера
-
 	SolidBrush brush(Color(255, 0, 0, 255));
 	imgr.FillEllipse(&brush, 20, 30, 80, 50);
 

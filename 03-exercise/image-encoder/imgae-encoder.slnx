@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="test-code.vcxproj" Id="9e14a495-af73-41e0-8c17-61a76eb66f14" />
+  <Project Path="imgae-encoder.vcxproj" Id="6f7ad02d-438e-42e9-b19c-58578dc810cc" />
 </Solution>
