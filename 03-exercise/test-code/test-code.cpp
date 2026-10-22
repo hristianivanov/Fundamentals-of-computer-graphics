@@ -163,29 +163,22 @@ VOID Example_SaveFile(HDC hdc)
 {
 	Graphics graphics(hdc);
 
-	// създаване на Image object на базата на PNG файл.
 	Image  image(L"Mosaic.png");
 
-	// визуализация на изображението
 	graphics.DrawImage(&image, 10, 10);
 
-	// създаване на графичен обект на базата на image.
 	Graphics imageGraphics(&image);
 
-	// промяна на изображението с изчертаване на елипса в него
 	SolidBrush brush(Color(255, 0, 0, 255));
 	imageGraphics.FillEllipse(&brush, 20, 30, 80, 50);
 
-	// визуализация на промяната.
 	graphics.DrawImage(&image, 200, 10);
 
-	// запазване на промененото изображение
 	CLSID pngClsid;
 	GetEncoderClsid(L"image/png", &pngClsid);
 
 	image.Save(L"Proba2.png", &pngClsid, NULL);
 
-	//промени в параметрите на енкодера 
 	CLSID clsid;
 	EncoderParameters encoderParameters;
 	ULONG             quality;
@@ -196,12 +189,9 @@ VOID Example_SaveFile(HDC hdc)
 	encoderParameters.Parameter[0].Type = EncoderParameterValueTypeLong;
 	encoderParameters.Parameter[0].NumberOfValues = 1;
 
-	// запис на JPEG формат изображение с компресия 99.
 	quality = 99;
 	encoderParameters.Parameter[0].Value = &quality;
 	image.Save(L"Proba3.jpg", &clsid, &encoderParameters);
-
-
 }
 VOID Example_BMPbuffer(HDC hdc, int ak, int xend, int yend)
 {

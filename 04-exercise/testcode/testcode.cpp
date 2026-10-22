@@ -214,8 +214,6 @@ void Render()
 	ReleaseDC(hWnd, hdc);
 }
 
-
-
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	int wmId, wmEvent;
@@ -272,10 +270,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		}
 		break;
 	case WM_PAINT:
-		//hdc = BeginPaint(hWnd, &ps);EndPaint(hWnd, &ps);
-
 		Render();
-
 		break;
 
 	default:
